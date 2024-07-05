@@ -1,7 +1,7 @@
 export type Character = {
   id: string;
   name: string;
-  espisodde: Episode[];
+  espisode: Episode[];
 };
 
 export type Episode = {

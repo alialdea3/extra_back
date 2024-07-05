@@ -13,13 +13,14 @@ export const getCharactersById = async (id: string) => {
   }
   const json = await data.json();
   const episodeId = json.episode.map((episode: string) => {
-    const episodeSplitted = episode.split("/");
-    return episodeSplitted[episodeSplitted.length - 1];
+    const espisodeSplitted = episode.split("/");
+    return espisodeSplitted[espisodeSplitted.length - 1];
   });
+
   const character: Character = {
     id: json.id,
     name: json.name,
-    espisodde: await getEpisodes(episodeId),
+    espisode: await getEpisodes(episodeId),
   };
   return character;
 };
